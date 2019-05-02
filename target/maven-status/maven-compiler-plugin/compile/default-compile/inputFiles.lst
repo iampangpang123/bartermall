@@ -1,0 +1,17 @@
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\Product.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\ProductWithUserInfo.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\UserService.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\impl\ProductServiceImpl.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\ProductService.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\mapper\ProductMapper.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\EditUserInfoController.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\UserController.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\ProductController.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\Admin.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\User.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\mapper\UserMapper.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\WantInfo.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\impl\UserServiceImpl.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\Category.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\WantInfoWithUserInfo.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\Order.java

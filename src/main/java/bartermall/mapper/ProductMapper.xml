@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace是命名空间，作用就是对sql语句进行分类化管理，可以理解sql的隔离 注意：使用mapper带你开发，namespace有重要作用， 
+	后面会讲到，即nameSpace等于mapper接口的地址 -->
+<mapper namespace="bartermall.mapper.ProductMapper">
+
+	<select id="getProductsByUserId" parameterType="String"
+		resultType="Product">
+		select * from product WHERE beloneto = #{uid}
+		<!-- ORDER BY state DESC -->
+	</select>
+	<select id="getProductsAll" resultType="product">
+		select * from product order by creattime desc ;<!-- asc -->
+		<!-- ORDER BY creat_time desc"; -->
+	</select>
+	<insert id="addProduct" parameterType="product">
+		INSERT INTO product
+		(pid,pname,buyprice ,saleprice
+		,pdesc,pimage,beloneto,cid2,readTimes,state,creattime,isHot)
+		VALUES(#{pid},#{pname},#{buyPrice},#{salePrice},#{pdesc},#{pimage},#{beloneto},#{cid2},#{readTimes},#{state},#{creatTime},#{isHot})
+	</insert>
+
+	<select id="getProductWithUserInfoById" parameterType="String"
+		resultType="ProductWithUserInfo">
+		select p.*,u.* from product as p inner join user as u on
+		p.beloneto=u.id
+		where pid=#{pid}
+	</select>
+
+	<update id="addReadTimes" parameterType="String">
+		UPDATE product p SET p.readtimes = p.readtimes+1 WHERE p.pid=#{pid};
+	</update>
+</mapper>

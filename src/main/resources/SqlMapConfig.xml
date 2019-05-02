@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 加载db。properties属性文件 -->
+	<!-- <properties resource="db.properties"></properties>
+ -->
+
+
+	<!-- 加载映射文件 -->
+	<!-- <mappers> 不配mapper的原因：我们使用了Spring与mybatis进行mapper扫描，所以不需要配置 不配置但是要遵循一些规则：mapper.xml与mapper.java文件同名且在一个目录 
+		<mapper resource="sqlmap/User.xml" /> <mapper resource="ssm/mapper/UserMapper.xml"/> 
+		</mappers> -->
+	<!-- 配置别名 -->
+	<typeAliases>
+		<package name="bartermall.pojo" /><!-- 这样别名就是类名，不用在statement里面写具体类的路径了 -->
+	
+	</typeAliases>
+
+
+</configuration>
+
+    
+    

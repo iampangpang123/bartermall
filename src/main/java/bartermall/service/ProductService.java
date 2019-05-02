@@ -1,0 +1,48 @@
+package bartermall.service;
+
+import java.util.List;
+
+import bartermall.pojo.Product;
+import bartermall.pojo.ProductWithUserInfo;
+
+public interface ProductService {
+
+	/**
+	 **   
+	 * @Description://登录时候用的，当用户点头像，根据这个方法会返回用户发布了多少商品
+	 * @param: @param uid
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsByUserId(String uid);
+
+	/**
+	 **   
+	 * @Description://主页自动调取的方法，用户显示所有商品,
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsAll();
+/*
+ * ，添加商品
+ */
+	void addProduct(Product product);
+
+	/**
+	 **   
+	 * @Description:点击商品的时候查询商品详细信息
+	 * @param: @param pid
+	 * @param: @return      
+	 * @return: ProductWithUserInfo      
+	 */
+	ProductWithUserInfo getProductWithUserInfoById(String pid);
+
+	/**
+	 **   
+	 * @Description:当用户点击后，增加商品浏览量
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void addReadTimes(String pid);
+
+}
