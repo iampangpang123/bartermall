@@ -1,19 +1,14 @@
 package bartermall.pojo;
 
 public class WantInfo {
-	private int wantId;
+	private String wantId;
 	private String userId;
 	private String title;
-	private String desc;
+	private String wdesc;
 	private String wantPrice;
 	private String wantDealArea;
 	private String creatTime;
-	public int getWantId() {
-		return wantId;
-	}
-	public void setWantId(int wantId) {
-		this.wantId = wantId;
-	}
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -27,10 +22,10 @@ public class WantInfo {
 		this.title = title;
 	}
 	public String getDesc() {
-		return desc;
+		return wdesc;
 	}
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.wdesc = desc;
 	}
 	public String getWantPrice() {
 		return wantPrice;
@@ -50,22 +45,29 @@ public class WantInfo {
 	public void setCreatTime(String creatTime) {
 		this.creatTime = creatTime;
 	}
-	public WantInfo(int wantId, String userId, String title, String desc, String wantPrice, String wantDealArea,
+	
+	public WantInfo(String wantId, String userId, String title, String desc, String wantPrice, String wantDealArea,
 			String creatTime) {
 		super();
 		this.wantId = wantId;
 		this.userId = userId;
 		this.title = title;
-		this.desc = desc;
+		this.wdesc = desc;
 		this.wantPrice = wantPrice;
 		this.wantDealArea = wantDealArea;
 		this.creatTime = creatTime;
+	}
+	public String getWantId() {
+		return wantId;
+	}
+	public void setWantId(String wantId) {
+		this.wantId = wantId;
 	}
 	public WantInfo() {
 	}
 	@Override
 	public String toString() {
-		return "WantInfo [wantId=" + wantId + ", userId=" + userId + ", title=" + title + ", desc=" + desc
+		return "WantInfo [wantId=" + wantId + ", userId=" + userId + ", title=" + title + ", desc=" + wdesc
 				+ ", wantPrice=" + wantPrice + ", wantDealArea=" + wantDealArea + ", creatTime=" + creatTime + "]\n";
 	}
 	

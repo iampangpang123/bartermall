@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(#{id},#{password},#{qq},#{photo},#{state},#{point})
 	</insert>
 	<insert id="updateUserInfo" parameterType="user">
-		UPDATE user set
+		UPDATE user set 
 		name=#{name},email=#{email},area=#{area},college=#{college},grade=#{grade},tel=#{tel},qq=#{qq}
 		WHERE id=#{id}
 	</insert>

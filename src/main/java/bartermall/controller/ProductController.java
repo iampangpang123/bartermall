@@ -17,6 +17,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
@@ -42,23 +43,22 @@ public class ProductController {
 	 * @return: void      
 	 * @throws IOException 
 	 */
+	@ResponseBody
 	@RequestMapping("productInfo")
-	public void productInfo(HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public ProductWithUserInfo productInfo(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		
 		String pid = request.getParameter("pid");
 		System.out.println(pid);
-		ProductWithUserInfo p = productService.getProductWithUserInfoById(pid);
+		ProductWithUserInfo productWithUserInfo = productService.getProductWithUserInfoById(pid);
 		productService.addReadTimes(pid);
+		 return productWithUserInfo;
+		//Gson gson = new Gson();
+		//String json = gson.toJson(p);
+		//System.out.println("ProductController+***"+"商品详情展示"+json.toString());
 		
-		Gson gson = new Gson();
-		String json = gson.toJson(p);
-		System.out.println("ProductController+***"+"商品详情展示"+json.toString());
-		
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("application/json;charset=utf-8");
-		response.getWriter().write(json);
-		
-		
+		//response.setCharacterEncoding("utf-8");
+		//response.setContentType("application/json;charset=utf-8");
+		//response.getWriter().write(json);	
 	}
 
 	/**

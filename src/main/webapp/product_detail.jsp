@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>商品详情——武科大步行街，WUSTER专属二手交易平台</title>
+    <title>易货二手交易平台</title>
    
     <link media="all" href="css/product_detail.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/index.css" type="text/css" rel="stylesheet">
@@ -85,7 +85,7 @@ $("#buy-button").click(function(){
             			<a  href="javascipt::" style="color: white" > 联系卖家</a>
        	 			</div>
                     	<div class="complain">
-                    		<a href="javascript:void(0);" onclick="report();">•&nbsp;&nbsp;&nbsp;&nbsp;举报&nbsp;&nbsp;&nbsp;&nbsp;•</a>
+                    		<a href="javascript:void(0);" onclick="report();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     	</div>
                 </div>
             </div>

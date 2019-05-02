@@ -1,3 +1,5 @@
+bartermall\service\impl\WantBuyServiceImpl.class
+bartermall\controller\WantBuyController.class
 bartermall\service\UserService.class
 bartermall\mapper\ProductMapper.class
 bartermall\pojo\User.class
@@ -9,8 +11,10 @@ bartermall\pojo\Admin.class
 bartermall\pojo\ProductWithUserInfo.class
 bartermall\service\impl\UserServiceImpl.class
 bartermall\controller\EditUserInfoController.class
+bartermall\service\WantBuyService.class
 bartermall\pojo\Order.class
 bartermall\service\impl\ProductServiceImpl.class
+bartermall\mapper\WantBuyMapper.class
 bartermall\pojo\WantInfo.class
 bartermall\pojo\Product.class
 bartermall\pojo\Category.class

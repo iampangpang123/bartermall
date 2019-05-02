@@ -34,12 +34,12 @@ public class WantInfoWithUserInfo extends WantInfo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public WantInfoWithUserInfo(int wantId, String userName, String title, String desc, String wantPrice,
+	public WantInfoWithUserInfo(String wantId, String userName, String title, String desc, String wantPrice,
 			String wantDealArea, String creatTime) {
 		super(wantId, userName, title, desc, wantPrice, wantDealArea, creatTime);
 		// TODO Auto-generated constructor stub
 	}
-	public WantInfoWithUserInfo(int wantId, String userName, String title, String desc, String wantPrice,
+	public WantInfoWithUserInfo(String wantId, String userName, String title, String desc, String wantPrice,
 			String wantDealArea, String creatTime, String userName2, String tel, String qq, String photo) {
 		super(wantId, userName, title, desc, wantPrice, wantDealArea, creatTime);
 		userName = userName2;

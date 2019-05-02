@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace是命名空间，作用就是对sql语句进行分类化管理，可以理解sql的隔离 注意：使用mapper带你开发，namespace有重要作用， 
+	后面会讲到，即nameSpace等于mapper接口的地址 -->
+<mapper namespace="bartermall.mapper.WantBuyMapper">
+
+	<insert id="WantBuyGoods" parameterType="WantInfo">
+		INSERT INTO wantinfo
+		(wantid,userid,title,wdesc,wantprice,wantdealarea,creattime) VALUES
+		(#{wantId},#{userId},#{title},#{desc},#{wantPrice},#{wantDealArea},#{creatTime})
+	</insert>
+	<select id="getWantInfoWithUserInfoList"
+		resultType="WantInfoWithUserInfo">
+		SELECT w.wantid wantId,w.userid userId,w.title ,w.`wdesc` wdesc,w.wantprice
+		wantPrice,
+		w.wantdealarea wantDealArea,w.creattime creatTime,u.`name` userName,u.tel,u.QQ
+		qq,u.photo
+		FROM wantinfo AS w INNER JOIN `user` AS u ON w.userid = u.id ORDER BY
+		w.creattime DESC;
+	</select>
+</mapper>
