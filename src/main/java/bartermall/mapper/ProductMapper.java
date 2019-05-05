@@ -40,4 +40,57 @@ public interface ProductMapper {
 	 * @return: void      
 	 */
 	void addReadTimes(String pid);
+	
+	/**
+	 **   
+	 * @Description:模糊查询商品列表，就是用户点击搜索框的时候，查询显示到product_list.jsp页面。匹配的列是pdesc
+	 * @param: @param keyword
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> productSearch(String keyword);
+	
+	/**
+	 **   
+	 * @Description:查询所有在售商品
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsAllOnsale();
+
+	/**
+	 **   
+	 * @Description:根据大类查找商品
+	 * @param: @param cid
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	
+	List<Product> getProductsListByBigCat(int cid);
+	/**
+	 **   
+	 * @Description:根据小类查询商品信息
+	 * @param: @param cid
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsByListSmallCat(int cid);
+
+	/**
+	 **   
+	 * @Description:查询所有商品并且排序（创建时间，热度（浏览量），价格等）
+	 * @param: @param urlValRank
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsListOrderByOther(String urlValRank);
+
+	/**
+	 **   
+	 * @Description://因为积分设计到到多表查询。动态sql这个不行：没法使用多表查询
+	 *              /根据信用查，就是用户的积分
+	 * @param: @return      
+	 * @return: List<Product>      
+	 */
+	List<Product> getProductsListOrderByPoint();
 }

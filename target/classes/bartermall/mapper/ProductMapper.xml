@@ -11,10 +11,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from product WHERE beloneto = #{uid}
 		<!-- ORDER BY state DESC -->
 	</select>
+
 	<select id="getProductsAll" resultType="product">
 		select * from product order by creattime desc ;<!-- asc -->
 		<!-- ORDER BY creat_time desc"; -->
 	</select>
+
 	<insert id="addProduct" parameterType="product">
 		INSERT INTO product
 		(pid,pname,buyprice ,saleprice
@@ -30,6 +32,65 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<update id="addReadTimes" parameterType="String">
-		UPDATE product p SET p.readtimes = p.readtimes+1 WHERE p.pid=#{pid};
+		UPDATE product p SET
+		p.readtimes = p.readtimes+1 WHERE p.pid=#{pid};
 	</update>
+
+	<select id="productSearch" parameterType="String"
+		resultType="product">
+		select * from product where pdesc LIKE
+		CONCAT('%',#{keyword},'%') or pname
+		LIKE CONCAT('%',#{keyword},'%')
+		order by creattime desc;
+	</select>
+
+	<select id="getProductsAllOnsale" resultType="product">
+		select * from
+		product where state="在售" order by creattime desc;
+	</select>
+
+	<select id="getProductsListByBigCat" parameterType="int"
+		resultType="Product">
+		<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where
+		c.cid2=#{cid} -->
+		select * from product where cid2=#{cid} order by creattime desc;
+	</select>
+
+	<select id="getProductsByListSmallCat" parameterType="int"
+		resultType="Product">
+	<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where 
+		c.cid1=#{cid} -->
+	 <!-- select * from product where cid=#{cid} order by creattime desc; -->
+	 select * from product where cid2   BETWEEN #{cid}*100+1 AND #{cid}*100+99
+	</select>
+
+	<select id="getProductsListOrderByOther" parameterType="string"
+		resultType="product">
+		select * from product p
+		<where>
+			<choose>
+				<when test='_parameter=="price"'>
+					p.state like "在售"
+					order by saleprice asc
+				</when>
+				<when test='_parameter=="time"'>
+					p.state like "在售"
+					order by creattime desc
+				</when>
+				<when test='_parameter=="readTimes"'>
+					p.state like "在售"
+					order by readtimes desc
+				</when>
+			</choose>
+		</where>
+	</select>
+
+	<select id="getProductsListOrderByPoint" resultType="product">
+		select p.*
+		from product p inner join user u on u.id=p.beloneto where
+		p.state
+		like
+		"在售" order by
+		u.point desc;
+	</select>
 </mapper>

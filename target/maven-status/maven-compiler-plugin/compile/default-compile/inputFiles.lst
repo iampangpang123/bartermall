@@ -1,6 +1,7 @@
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\Product.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\pojo\ProductWithUserInfo.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\UserService.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\SerachProductController.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\impl\ProductServiceImpl.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\ProductService.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\WantBuyController.java

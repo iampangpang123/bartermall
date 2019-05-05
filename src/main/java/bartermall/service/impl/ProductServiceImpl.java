@@ -40,5 +40,33 @@ public class ProductServiceImpl implements ProductService {
 	productMapper.addReadTimes(pid);
 		
 	}
+	@Override
+	public List<Product> productSearch(String keyword) {
+		// TODO Auto-generated method stub
+		return productMapper.productSearch(keyword);
+	}
+	@Override
+	public List<Product> getProductsAllOnsale() {
+		// TODO Auto-generated method stub
+		return productMapper.getProductsAllOnsale();
+	}
+	@Override
+	public List<Product> getProductListByCat(int cid) {
+		if(cid > 100){
+			return productMapper.getProductsListByBigCat(cid);//根据大类查找山商品
+		}else{
+			return productMapper.getProductsByListSmallCat(cid);//根据小类查找商品
+		}
+	
+	}
+	@Override
+	public List<Product> getProductsListOrderBy(String urlValRank) {
+     if(urlValRank.equals("point")) {//因为积分设计到到多表查询。动态sql这个不行：没法使用多表查询
+    	 return productMapper.getProductsListOrderByPoint();//根据信用查，就是用户的积分
+    	
+     }else {
+    	 return productMapper.getProductsListOrderByOther(urlValRank);//这个动态sql(根据创建时间，浏览量，价格排序)
+	}
+	}
 
 }

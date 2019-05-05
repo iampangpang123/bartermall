@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-        <title>求购专区 - 武科大步行街,WUSTER专属二手交易平台</title>
+        <title>易货二手交易平台</title>
 
         <link rel="icon" href="favicon.ico">
         <link rel="icon" href="favicon.ico" type="image/x-icon">

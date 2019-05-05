@@ -1,6 +1,7 @@
 bartermall\service\impl\WantBuyServiceImpl.class
 bartermall\controller\WantBuyController.class
 bartermall\service\UserService.class
+bartermall\controller\SerachProductController.class
 bartermall\mapper\ProductMapper.class
 bartermall\pojo\User.class
 bartermall\controller\UserController.class
