@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:50 +0800] "GET /index.jsp HTTP/1.1" 200 17641 http-bio-8090-exec-1 1261
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:50 +0800] "POST /order HTTP/1.1" 404 961 http-bio-8090-exec-3 7
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:51 +0800] "GET /read/goodRule.action HTTP/1.1" 200 2316 http-bio-8090-exec-2 1341
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:52 +0800] "POST /newProduct.action HTTP/1.1" 200 2160 http-bio-8090-exec-4 1569
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "GET /product_detail.jsp?pid=a3deded6bb544c7aa04f0d92f280370a HTTP/1.1" 200 18247 http-bio-8090-exec-6 172
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "GET /js/plugin.client.js HTTP/1.1" 404 989 http-bio-8090-exec-7 2
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "GET /index_1.html HTTP/1.1" 404 975 http-bio-8090-exec-8 2
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "GET /index_2.html HTTP/1.1" 404 975 http-bio-8090-exec-5 1
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "POST /order HTTP/1.1" 404 961 http-bio-8090-exec-10 2
+0:0:0:0:0:0:0:1 - - [06/May/2019:17:15:53 +0800] "POST /productInfo.action HTTP/1.1" 200 549 http-bio-8090-exec-10 98
