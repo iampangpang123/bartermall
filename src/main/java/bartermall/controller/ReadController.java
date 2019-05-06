@@ -11,14 +11,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
 @Controller
 @RequestMapping("read")
 public class ReadController {
 
 	@RequestMapping("goodRule")
-	@ResponseBody
-	public String goodRule(HttpServletRequest  request,HttpServletResponse response) throws IOException {
-	response.setCharacterEncoding("utf-8");
+	public void goodRule(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json;charset=utf-8");
 		String projectUrl = System.getProperty("user.dir");// 得到项目的路径
 		String filePath = projectUrl + "\\src\\main\\webapp\\txt\\goodRule.txt";
@@ -43,13 +44,17 @@ public class ReadController {
 				e.printStackTrace();
 			}
 		}
-		return str;
+//		Gson gson = new Gson();
+//		String json = gson.toJson(str);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().write(str);
+		//return str;
 	}
-	
+
 	@RequestMapping("secondIphone")
-	@ResponseBody
-	public String secondIpone(HttpServletRequest  request,HttpServletResponse response) throws IOException {
-	response.setCharacterEncoding("utf-8");
+	public void secondIpone(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json;charset=utf-8");
 		String projectUrl = System.getProperty("user.dir");// 得到项目的路径
 		String filePath = projectUrl + "\\src\\main\\webapp\\txt\\secondIphone.txt";
@@ -74,6 +79,11 @@ public class ReadController {
 				e.printStackTrace();
 			}
 		}
-		return str;
+//		Gson gson = new Gson();
+//		String json = gson.toJson(str);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().write(str);
+		//return str;
 	}
 }

@@ -37,8 +37,8 @@ function searchPro(){
 </head>
 <body>
 	<header class="ease2">
-	    <a href="http://www.zzuli.edu.cn/">
-	        <img class="logo ease2" src="imgs2/timg.jpg" alt="易货">
+	    <a href="http://www.zzuli.edu.cn/" target="_blank">
+	        <img class="logo ease2" src="imgs2/timg.jpg" alt="郑州轻工业大学" >
 	    </a>
 	    <div class="header-main center ease2">
 	        <a href='<c:url value="/index.jsp" ></c:url>' class="slogan">

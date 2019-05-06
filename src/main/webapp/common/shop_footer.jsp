@@ -14,11 +14,11 @@
 		<ul class="links-wr center">
 			<li class="first"><a href="${pageContext.request.contextPath}/index.jsp"
 				target="_top" class="links">易货二手交易平台</a></li>
-			<li><a href="http://www.zzuli.edu.cn" target="_top"
+			<li><a href="http://www.zzuli.edu.cn" target="_blank"
 				class="links">郑州轻工业大学</a></li>
-			<li><a href="http://my.zzuli.edu.cn" target="_top" class="links">郑州轻工业大学信息门户</a>
+			<li><a href="http://my.zzuli.edu.cn" target="_blank" class="links">郑州轻工业大学信息门户</a>
 			</li>
-			<li><a href="http://lib.zzuli.edu.cn/p3752c3685/list.htm" target="_top"
+			<li><a href="http://lib.zzuli.edu.cn/p3752c3685/list.htm" target="_blank"
 				class="links">郑州轻工业大学数字图书馆</a></li>
 		</ul>
 	</div>
