@@ -12,6 +12,7 @@ bartermall\pojo\Admin.class
 bartermall\pojo\ProductWithUserInfo.class
 bartermall\service\impl\UserServiceImpl.class
 bartermall\controller\EditUserInfoController.class
+bartermall\controller\ReadController.class
 bartermall\service\WantBuyService.class
 bartermall\pojo\Order.class
 bartermall\service\impl\ProductServiceImpl.class

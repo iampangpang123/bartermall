@@ -128,7 +128,7 @@
 		</div>
 		<!--注册end-->
 	</div>
-	<div class="jianyi">*推荐使用ie8或以上版本ie浏览器或Chrome内核浏览器访问本站</div>
+	<div class="jianyi">*推荐使用IE8或以上版本IE浏览器或Chrome内核浏览器访问本站</div>
 </body>
 
 </html>

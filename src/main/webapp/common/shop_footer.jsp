@@ -9,23 +9,22 @@
 <body>
 
 	<footer> <img class="footer-tri" src="imgs/footer-tri.png">
-	<!-- <div class="friend-links">
+	 <div class="friend-links">
 		<div class="links-title center">友情链接</div>
 		<ul class="links-wr center">
-			<li class="first"><a href="http://localhost:8050/CampusShop/"
-				target="_top" class="links">武科大步行街</a></li>
-			<li><a href="http://202.114.242.231:8036" target="_top"
-				class="links">武科大教务处</a></li>
-			<li><a href="http://www.wust.edu.cn" target="_top" class="links">武汉科技大学</a>
+			<li class="first"><a href="${pageContext.request.contextPath}/index.jsp"
+				target="_top" class="links">易货二手交易平台</a></li>
+			<li><a href="http://www.zzuli.edu.cn" target="_top"
+				class="links">郑州轻工业大学</a></li>
+			<li><a href="http://my.zzuli.edu.cn" target="_top" class="links">郑州轻工业大学信息门户</a>
 			</li>
-			<li><a href="http://www.lib.wust.edu.cn/" target="_top"
-				class="links">武科大图书馆</a></li>
+			<li><a href="http://lib.zzuli.edu.cn/p3752c3685/list.htm" target="_top"
+				class="links">郑州轻工业大学数字图书馆</a></li>
 		</ul>
 	</div>
 	<div class="site-msg line2">
-		<span class="power">©2016-2017 武科大步行街 版权所有</span> <span>开发By
-			skyming</span>
-	</div> -->
+		<span class="power">©2019 易货二手交易平台 版权所有</span> <span>开发ByTangtao</span>
+	</div> 
 	</footer>
 
 </body>

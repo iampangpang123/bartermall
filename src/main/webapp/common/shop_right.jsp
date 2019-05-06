@@ -19,13 +19,7 @@
 </head>
 <body>
 	    <aside>
-       
-      <!--  	<p>
-        	<input id="switch-onColor" type="checkbox" checked="checked" 
-                    data-on-color="info"  data-off-color="success" 
-                    data-on-text="青山" data-off-text = "黄家湖"
-                    data-handle-width="60">
-       </p> -->
+ >
        	
         <div id="release-button1" >
              <a  href="want_list_creat.jsp" style="color: white" id="want-buy"
