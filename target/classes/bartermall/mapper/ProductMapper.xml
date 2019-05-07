@@ -51,17 +51,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="getProductsListByBigCat" parameterType="int"
 		resultType="Product">
-		<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where
-		c.cid2=#{cid} -->
+		<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where 
+			c.cid2=#{cid} -->
 		select * from product where cid2=#{cid} order by creattime desc;
 	</select>
 
 	<select id="getProductsByListSmallCat" parameterType="int"
 		resultType="Product">
-	<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where 
-		c.cid1=#{cid} -->
-	 <!-- select * from product where cid=#{cid} order by creattime desc; -->
-	 select * from product where cid2   BETWEEN #{cid}*100+1 AND #{cid}*100+99
+		<!-- select p.* from product p inner join category c on p.cid2=c.cid2 where 
+			c.cid1=#{cid} -->
+		<!-- select * from product where cid=#{cid} order by creattime desc; -->
+		select * from product where cid2 BETWEEN #{cid}*100+1 AND
+		#{cid}*100+99
 	</select>
 
 	<select id="getProductsListOrderByOther" parameterType="string"
@@ -93,4 +94,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"在售" order by
 		u.point desc;
 	</select>
+
+	<delete id="deleteProductByPid" parameterType="string">
+		delete from
+		product where pid=#{pid}
+	</delete>
+	
+	<update id="editProductState" parameterType="string">
+		update product set state="已售"   where pid=#{pid}
+	</update>
 </mapper>

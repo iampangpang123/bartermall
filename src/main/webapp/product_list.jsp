@@ -51,21 +51,11 @@
             </div>
             <div class="item-list">
                 <ul class="items clearfix">
-                      
-                  <!--    <li class="item">
-                        <a href="http://hust.2shoujie.com/goods/185614.html" class="img" target="_top"><img src="ios_default_1494065510_107750_0" alt="美利达勇士600山地自行车低价转让"></a>
-                        <div class="info">
-                            <div class="price">400</div>
-                            <div class="name"><a href="http://hust.2shoujie.com/goods/185614.html" target="_top">美利达勇士600山地自行车低价转让</a></div>
-                            <div class="department"><span>研究生14级(未认证)</span></div>
-                            <div class="place"><span>全校</span></div>
-                        </div>
-                    </li>
-                  -->
+              
                                        
                 </ul>
             </div>
-            <div class="pages">
+          <!--   <div class="pages">
                                 <a class="page-num cur" href="http://hust.2shoujie.com/category1/time/pn1">1</a>
                                 <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn2">2</a>
                                 <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn3">3</a>
@@ -75,7 +65,7 @@
                                 <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn7">7</a>
                                 <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn8">8</a>
                                 <a class="page-arrow arrow-right" href="http://hust.2shoujie.com/category1/time/pn2">下一页</a>
-           </div>
+           </div> -->
         </div>
     </div>
 <div class="return-to-top"><a href="#"></a></div><!--返回顶部-->

@@ -93,4 +93,20 @@ public interface ProductMapper {
 	 * @return: List<Product>      
 	 */
 	List<Product> getProductsListOrderByPoint();
+
+	/**
+	 **   
+	 * @Description:根據pid刪除商品
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void deleteProductByPid(String pid);
+
+	/**
+	 **   
+	 * @Description:修改商品状态
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void editProductState(String pid); 
 }

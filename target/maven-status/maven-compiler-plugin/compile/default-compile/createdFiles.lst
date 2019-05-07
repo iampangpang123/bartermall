@@ -1,3 +1,4 @@
+bartermall\controller\ProductEditController.class
 bartermall\service\impl\WantBuyServiceImpl.class
 bartermall\controller\WantBuyController.class
 bartermall\service\UserService.class

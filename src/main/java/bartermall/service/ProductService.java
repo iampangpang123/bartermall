@@ -80,4 +80,19 @@ public interface ProductService {
 	 */
 	List<Product> getProductsListOrderBy(String urlValRank);
 
+	/**
+	 **   
+	 * @Description:刪除商品
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void deleteProductByPid(String pid);
+
+	/**
+	 **   
+	 * @Description:修改商品状态
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void editProductState(String pid); 
 }

@@ -80,15 +80,20 @@ function inituserpros(uid){
 		var count = resp.length
 		for(var i = 0;i<resp.length;i++){
 			if(resp[i].state=="在售"){
+				/*'<span class="enshrine_it make_edition"'+'onclick=refresh("'+resp[i].pid+'");>擦亮</span>'+*/
 			var mypro1 = $('<div class="enshr_each" id="prolist">  ' +
 					'<div class="enshr_info"><h2><a href="product_detail.jsp?pid='+resp[i].pid+'" '+
 					'title="坚果pro">'+resp[i].pname+'</a></h2><p>'+resp[i].pdesc+'</p>'+
 					'<div class="enshr_state"><span id="prostate">状态：'+resp[i].state+'</span>' +
 					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
-					'<span class="enshrine_it" onclick="sellout('+resp[i].pid+');">确认售出</span>'+
-					'<span class="enshrine_it make_edition" onclick="offshelf('+resp[i].pid+');">下架</span>'+
-					'<span class="enshrine_it make_edition" onclick="refresh('+resp[i].pid+');">擦亮</span>'+
-	                '<a href="product_release.jsp?pid='+resp[i].pid+'" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
+					
+					'<span class="enshrine_it"'+'onclick=sellout("'+resp[i].pid+'");>确认售出</span>'+
+					
+					'<span class="enshrine_it make_edition"'+'onclick=offshelf("'+resp[i].pid+'");>下架</span>'+
+					
+					'<span class="enshrine_it make_edition"'+'onclick=refresh("'+resp[i].pid+'");>擦亮</span>'+
+	                
+					'<a href="product_release.jsp?pid='+resp[i].pid+'" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
 			}
@@ -99,13 +104,10 @@ function inituserpros(uid){
 					'<div class="enshr_state"><span id="prostate">状态：'+resp[i].state+'</span>' +
 					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
 					'<span class="enshrine_it" style="color:yellow" );">已售出</span>'+
-					'<span class="enshrine_it make_edition" style="color:red"  onclick="offshelf('+resp[i].pid+');">删除</span>'+
+					'<span class="enshrine_it make_edition"'+'style="color:red"'+'onclick=offshelf("'+resp[i].pid+'");>删除</span>'+
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
 			}
-	       
-	                
-	                
 			$("#onsale_pro").append(mypro1);
 		}
 		$("#procount").html('<p>'+count+'</p>')
@@ -118,7 +120,7 @@ function offshelf(pid){
     if (!confirm('下架后商品别人将看不到，请是否确认下架？')) {
         return;
     }
-    $.post('productedit', 
+    $.post('productSateEdit.action', 
     		{"pid" : pid,"flag":1},
     		function(res){
 		        if (res.length > 2) {
@@ -130,12 +132,12 @@ function offshelf(pid){
 		        }
     });
 }
-
+//aa
 function refresh(pid){
     if (!confirm('擦亮后，您的商品将靠前展示。')) {
         return;
     }
-    $.post('productedit', 
+    $.post('productSateEdit.action', 
     		{"pid" : pid,"flag":2},
     		function(res){
 		       if (res.length > 2) {
@@ -153,7 +155,7 @@ function sellout(pid){
     if (!confirm('确认售出？')) {
         return;
     }
-    $.post('productedit', 
+    $.post('productSateEdit.action', 
     		{"pid" : pid,"flag":3},
     		function(res){
 		       if (res.length > 2) {

@@ -6,15 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-	<!-- <link rel="stylesheet"  href="../css/bootstrap.min.css">
-	<link rel="stylesheet"  href="../css/bootstrap-switch.css">
-	<script  src="../js/jquery-3.1.1.min.js"></script>
-	<script  src="../js/bootstrap.min.js"></script>
-	<script  src="../js/bootstrap-switch.js"></script>
-	<link href="../css/main.css" rel="stylesheet"></head>
-    <link href="../css/highlight.css" rel="stylesheet">
-    <script src="../js/highlight.js"></script>
-    <script src="../js/main.js"></script> -->
 
 </head>
 <body>

@@ -68,5 +68,14 @@ public class ProductServiceImpl implements ProductService {
     	 return productMapper.getProductsListOrderByOther(urlValRank);//这个动态sql(根据创建时间，浏览量，价格排序)
 	}
 	}
+	@Override
+	public void deleteProductByPid(String pid) {
+	    productMapper.deleteProductByPid( pid);
+	}
+	@Override
+	public void editProductState(String pid) {
+		productMapper.editProductState(pid);
+		
+	}
 
 }
