@@ -100,7 +100,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		product where pid=#{pid}
 	</delete>
 	
-	<update id="editProductState" parameterType="string">
+	<update id="editProductStateToYiSou" parameterType="string">
 		update product set state="已售"   where pid=#{pid}
+	</update>
+	
+	<update id="editProductStateToWeiSou" parameterType="string">
+		update product set state="在售"   where pid=#{pid}
 	</update>
 </mapper>

@@ -104,9 +104,17 @@ public interface ProductMapper {
 
 	/**
 	 **   
-	 * @Description:修改商品状态
+	 * @Description:修改商品状态到已售
 	 * @param: @param pid      
 	 * @return: void      
 	 */
-	void editProductState(String pid); 
+	void editProductStateToYiSou(String pid); 
+
+	/**
+	 **   
+	 * @Description:修改商品状态到未售
+	 * @param: @param pid      
+	 * @return: void      
+	 */
+	void editProductStateToWeiSou(String pid); 
 }

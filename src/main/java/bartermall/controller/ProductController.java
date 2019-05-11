@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import bartermall.exception.GlobalException;
 import bartermall.pojo.Product;
 import bartermall.pojo.ProductWithUserInfo;
 import bartermall.pojo.User;
@@ -98,7 +99,7 @@ public class ProductController {
 	 */
 	@RequestMapping("productrelease")
 	public void productrelease(HttpServletRequest request, HttpServletResponse response, MultipartFile uploadFile)
-			throws IOException {
+			throws GlobalException, IOException{
 		request.setCharacterEncoding("utf-8");
 		String pname = request.getParameter("title");
 		String pdesc = request.getParameter("desc");

@@ -1,3 +1,4 @@
+bartermall\exception\GlobalExceptionResolver.class
 bartermall\controller\ProductEditController.class
 bartermall\service\impl\WantBuyServiceImpl.class
 bartermall\controller\WantBuyController.class
@@ -11,7 +12,9 @@ bartermall\controller\ProductController.class
 bartermall\mapper\UserMapper.class
 bartermall\pojo\Admin.class
 bartermall\pojo\ProductWithUserInfo.class
+bartermall\exception\GlobalException.class
 bartermall\service\impl\UserServiceImpl.class
+bartermall\web\interceptor\LoginInterceptor.class
 bartermall\controller\EditUserInfoController.class
 bartermall\controller\ReadController.class
 bartermall\service\WantBuyService.class

@@ -73,9 +73,13 @@ public class ProductServiceImpl implements ProductService {
 	    productMapper.deleteProductByPid( pid);
 	}
 	@Override
-	public void editProductState(String pid) {
-		productMapper.editProductState(pid);
+	public void editProductStateToYiSou(String pid) {
+		productMapper.editProductStateToYiSou(pid);
 		
+	}
+	@Override
+	public void editProductStateToWeiSou(String pid) {
+		productMapper.editProductStateToWeiSou(pid);
 	}
 
 }

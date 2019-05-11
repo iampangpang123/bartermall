@@ -41,9 +41,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- 异常处理器 -->
-	<!-- <bean id="handlerExceptionResolver"
-		class="barterplatform.user.exception.UserExceptionResolver" /> -->
+	<!-- 全局异常处理器 -->
+	<bean id="handlerExceptionResolver"
+		class="bartermall.exception.GlobalExceptionResolver" />
 	<!-- 文件上传 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -53,16 +53,17 @@
 		</property>
 	</bean>
 	<!-- 配置自定义的拦截器 -->
-	<!-- <mvc:interceptors>
+	 <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<mvc:exclude-mapping path="/login.action" />
-			<mvc:exclude-mapping path="/regist.action" />
-			<mvc:exclude-mapping path="/verifyCode.action" />
+			<mvc:exclude-mapping path="/loginServlet.action" />
+			<mvc:exclude-mapping path="/regServlet.action" />
+			<mvc:exclude-mapping path="/wantBuyGoodsArea.action" />
+			<mvc:exclude-mapping path="/newProduct.action" />
 			<bean
-				class="barterplatform.user.web.interceptor.LoginInterceptor" />
+				class="bartermall.web.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors> 
 
 
 </beans>

@@ -89,8 +89,7 @@ function inituserpros(uid){
 					
 					'<span class="enshrine_it"'+'onclick=sellout("'+resp[i].pid+'");>确认售出</span>'+
 					
-					'<span class="enshrine_it make_edition"'+'onclick=offshelf("'+resp[i].pid+'");>下架</span>'+
-					
+					'<span class="enshrine_it make_edition"'+'style="color:red"'+'onclick=offshelf("'+resp[i].pid+'");>删除</span>'+					
 					'<span class="enshrine_it make_edition"'+'onclick=refresh("'+resp[i].pid+'");>擦亮</span>'+
 	                
 					'<a href="product_release.jsp?pid='+resp[i].pid+'" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
@@ -103,8 +102,11 @@ function inituserpros(uid){
 					'title="坚果pro">'+resp[i].pname+'</a></h2><p>'+resp[i].pdesc+'</p>'+
 					'<div class="enshr_state"><span id="prostate">状态：'+resp[i].state+'</span>' +
 					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
-					'<span class="enshrine_it" style="color:yellow" );">已售出</span>'+
+					
+					'<span class="enshrine_it" style="color:BlueViolet" );">已售出</span>'+
 					'<span class="enshrine_it make_edition"'+'style="color:red"'+'onclick=offshelf("'+resp[i].pid+'");>删除</span>'+
+					'<span class="enshrine_it make_edition"'+'onclick=againGrounding("'+resp[i].pid+'");>再次上架</span>'+
+					
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
 			}
@@ -166,5 +168,21 @@ function sellout(pid){
 		        	alert("售出失败，请重试")
 		        }
     });
+  
 }
 
+function againGrounding(pid){
+    if (!confirm('确认再次上架？')) {
+        return;
+    }
+    $.post('productSateEdit.action', 
+    		{"pid" : pid,"flag":4},
+    		function(res){
+		       if (res.length > 2) {
+		        	
+		        	alert("恭喜！上架成功！")
+		            location.reload();
+		        } else {
+		        	alert("上架失败，请重试")
+		        }
+    });}

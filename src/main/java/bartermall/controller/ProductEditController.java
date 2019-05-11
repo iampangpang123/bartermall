@@ -42,16 +42,19 @@ public class ProductEditController {
 		}
 		// 售出（改变商品状态）
 		if (Integer.parseInt(flag) == 3) {
-			productService.editProductState(pid);
+			productService.editProductStateToYiSou(pid);
 			ProductWithUserInfo productWithUserInfo 
 			  = productService.getProductWithUserInfoById(pid);// 根據商品pid，得到商品与用户的信息)
 			String userid=productWithUserInfo.getBeloneto();//得到用户id
 			userService.addPointByReleaseProduct(userid);//增加两积分
-			
-		
 			 res = "aaa";
-			
 		}
+		// 上架（也是改变商品状态）state改成未售
+		if (Integer.parseInt(flag) == 4) {
+			productService.editProductStateToWeiSou(pid);
+			 res = "aaa";
+		}
+
 
 		return res;
 	}
