@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1 style="color: #4BC0A5">
-		易货二手交易平台<sup>2019</sup>
+		易货交易平台<sup>2019</sup>
 	</h1>
 
 	<div class="login" style="margin-top: 50px;">
@@ -101,7 +101,7 @@
 									class="inputstyle2" />
 							</div></li>
 
-						<li><label for="qq" class="input-tips2">QQ：</label>
+						<li><label for="qq" class="input-tips2">邮箱：</label>
 							<div class="inputOuter2">
 
 								<input type="text" id="qq" name="qq" maxlength="10"

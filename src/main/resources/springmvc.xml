@@ -60,6 +60,10 @@
 			<mvc:exclude-mapping path="/regServlet.action" />
 			<mvc:exclude-mapping path="/wantBuyGoodsArea.action" />
 			<mvc:exclude-mapping path="/newProduct.action" />
+			<mvc:exclude-mapping path="/productInfo.action" />
+			<mvc:exclude-mapping path="/findAllProductAndOrder.action" />
+			<mvc:exclude-mapping path="/productSearch.action" />
+
 			<bean
 				class="bartermall.web.interceptor.LoginInterceptor" />
 		</mvc:interceptor>

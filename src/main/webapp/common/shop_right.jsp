@@ -10,7 +10,7 @@
 </head>
 <body>
 	    <aside>
- >
+ 
        	
         <div id="release-button1" >
              <a  href="want_list_creat.jsp" style="color: white" id="want-buy"

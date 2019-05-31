@@ -14,9 +14,16 @@ public class User {
 	private int point;
 	private String state;
 	private String statePhoto;
+	private int probibit;
 	
 	
 	
+	public int getProbibit() {
+		return probibit;
+	}
+	public void setProbibit(int probibit) {
+		this.probibit = probibit;
+	}
 	public String getState() {
 		return state;
 	}
@@ -118,8 +125,9 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", area=" + area
 				+ ", college=" + college + ", grade=" + grade + ", tel=" + tel + ", qq=" + qq + ", photo=" + photo
-				+ ", point=" + point + ", state=" + state + ", statePhoto=" + statePhoto + "]\n";
+				+ ", point=" + point + ", state=" + state + ", statePhoto=" + statePhoto + ", probibit=" + probibit
+				+ "]";
 	}
-	
+
 	
 }

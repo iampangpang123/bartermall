@@ -86,7 +86,9 @@ function searchPro(){
 	var str=$('<div id="have_login" class="clearfix"><div id="person_info" class="clearfix">'+
             '<a href="user_center.jsp?id='+userId+'"><img  class="avatar"  style="height:48px;width:48px;" src="imgs/'+userPhoto+'"></a>'+
             '<div  style="display:inline;"  class="person_name"><a   href="user_center.jsp?id='+userId+'" id="id-btn">Hi：'+userId+'</a></div>'+
-            '<div  style="display:inline;"  class="person_name"><a   href="<c:url value='/quitLogin.action'/>" id="log-btn">&nbsp;&nbsp;&nbsp;&nbsp;退出</a></div>'+
+          
+            '<div  style="display:inline;"  class="person_name"><a   href="cartlist.jsp?id='+userId+'" id="id-btn" >&nbsp;&nbsp;&nbsp;&nbsp;购物车</a></div>'+
+            '<div  style="display:inline;"  class="person_name"><a   href="<c:url value='/quitLogin.action'/>" id="log-btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</a></div>'+
             '</div> </div>')
 	$("#have-not-login").append(str)
 	}

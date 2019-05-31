@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import bartermall.pojo.Cart;
 import bartermall.pojo.Product;
 import bartermall.pojo.User;
 import bartermall.service.ProductService;
@@ -77,13 +78,20 @@ public class UserController {
 			User inputUser = new User();
 			inputUser.setId(userId);
 			inputUser.setPassword(pwd);
-			//inputUser.setState("未认证");
+			// inputUser.setState("未认证");
 			user = userService.getUserByIdPwd(inputUser);
 			System.out.println(user);
 			System.out.println(user + "33333");
 			if (user != null) {
-
+				int propipit = userService.getUserById(userId).getProbibit();
+				if (propipit == 0) {
+					request.getSession().setAttribute("user", user);
+					response.sendRedirect("adminjsps/admin/index.jsp");
+					return;
+				}
 				request.getSession().setAttribute("user", user);
+				Cart cart=new Cart();
+				request.getSession().setAttribute("cart", cart);
 				// request.getRequestDispatcher("index.jsp").forward(request, response);
 				response.sendRedirect("index.jsp");
 				System.out.println("跳转到主页面");
@@ -134,8 +142,8 @@ public class UserController {
 			user.setId(id);
 			user.setPassword(pwd);
 			user.setQq(qq);
-            user.setState("未认证");
-            user.setPoint(0);
+			user.setState("未认证");
+			user.setPoint(0);
 			userService.regUser(user);
 			request.getSession().setAttribute("user", user);
 			response.sendRedirect("user_center.jsp?id=" + id + "");
@@ -145,6 +153,5 @@ public class UserController {
 		// request.setAttribute("name", "了几分动感");
 		// request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-
 
 }
