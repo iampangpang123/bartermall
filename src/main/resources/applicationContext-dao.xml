@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
 		http://www.springframework.org/schema/mvc 
@@ -14,38 +16,44 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 
+	<!-- 加载配置文件 ：微信支付的配置文件，一个xml文件只能有一个这个标签 -->
 
-<!-- 加载配置文件 -->
-	<context:property-placeholder location="classpath:db.properties" />
+	<!-- 加载配置文件 -->
+	<context:property-placeholder
+		location="classpath:db.properties,classpath:weixinpay.properties,classpath:mail.properties" />
+
 	<!-- 数据库连接池 -->
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="${jdbc.driver}" />
 		<property name="jdbcUrl" value="${jdbc.url}" />
 		<property name="user" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
-		
+
 	</bean>
-	
+
 
 	<!-- 配置sqlSessionFactory工厂（在mybatis-spring-1.2.2.jar这个jar包） -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 加载mybatis配置文件 -->
-		<property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
+		<property name="configLocation"
+			value="classpath:SqlMapConfig.xml"></property>
 		<!-- 配置数据源 -->
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
 
-	<!-- 配置mapper的扫描器 .这样就不用在类上一个个配了，比如配controller-->
+	<!-- 配置mapper的扫描器 .这样就不用在类上一个个配了，比如配controller -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	<!-- 如果要扫描多个包，中间使用半角逗号隔开 -->
+		<!-- 如果要扫描多个包，中间使用半角逗号隔开 -->
 		<property name="basePackage" value="bartermall.mapper"></property>
-<!-- 		不要用ref="sqlSessionFactory，因为容易导致引用的dp。properties文件无法使用，导致连接不上数据库 -->
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<!-- 不要用ref="sqlSessionFactory，因为容易导致引用的dp。properties文件无法使用，导致连接不上数据库 -->
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory" />
 	</bean>
 
- 
 
 
 

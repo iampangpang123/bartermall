@@ -15,10 +15,13 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 
+
+
 	<!-- 开启组件扫描 ，这样就不用对handler进行单个配置，可以扫描controller，service等 这里我们让扫描Controller，指定Controller的包,这样 
 		注解的hanler就不用配置类路径了，方法上声明的url就是 -->
 	<context:component-scan
 		base-package="bartermall.controller"></context:component-scan>
+
 
 	<!-- 使用 mvc:annotation-driven代替上边注解映射器和注解适配器配置 mvc:annotation-driven默认加载很多的参数绑定方法， 
 		比如json转换解析器就默认加载了，如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter 
@@ -27,11 +30,13 @@
 	<mvc:annotation-driven />
 	<mvc:resources location="/imgs/" mapping="/imgs/**" />
 	<mvc:resources location="/imgs2/" mapping="/imgs2/**" />
-	<mvc:resources location="/imgs_products/" mapping="//imgs_products//**" />
+	<mvc:resources location="/imgs_products/"
+		mapping="//imgs_products//**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
-	<mvc:resources location="/webapp_js/" mapping="/webapp_js/**" />
+	<mvc:resources location="/webapp_js/"
+		mapping="/webapp_js/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
-	
+
 	<!-- 视图解析器 解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -53,21 +58,22 @@
 		</property>
 	</bean>
 	<!-- 配置自定义的拦截器 -->
-	 <mvc:interceptors>
+	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/loginServlet.action" />
 			<mvc:exclude-mapping path="/regServlet.action" />
-			<mvc:exclude-mapping path="/wantBuyGoodsArea.action" />
+			<mvc:exclude-mapping
+				path="/wantBuyGoodsArea.action" />
 			<mvc:exclude-mapping path="/newProduct.action" />
 			<mvc:exclude-mapping path="/productInfo.action" />
-			<mvc:exclude-mapping path="/findAllProductAndOrder.action" />
+			<mvc:exclude-mapping
+				path="/findAllProductAndOrder.action" />
 			<mvc:exclude-mapping path="/productSearch.action" />
 
-			<bean
-				class="bartermall.web.interceptor.LoginInterceptor" />
+			<bean class="bartermall.web.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> 
+	</mvc:interceptors>
 
 
 </beans>

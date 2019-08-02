@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>微信支付页</title>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/qrious.min.js"></script>
+</head>
+
+<body>
+	<img id="qrious">
+</body>
+<script>
+	/* $(document).ready(function(){ 
+	 alert("页面加载完成！")；
+	 }); 
+	 */
+	var out_trade_no;
+	var code_url;
+	var return_msg;
+	var return_code;
+
+	$(document).ready(function() {
+		alert("AAAAAA");
+
+		$.ajax({
+			type : "GET",
+			url : "http://localhost:8090/pay/createNavite.action",
+			dataType : "json",//接受数据的格式
+			success : function(res) {
+
+				out_trade_no = res.out_trade_no;
+				code_url = res.code_url;
+				return_msg = res.return_msg;
+				return_code = res.return_code
+
+				var qr = new QRious({
+					element : document.getElementById('qrious'),//默认这样写即可
+					size : 250,
+					level : 'H',
+					value : out_trade_no + code_url + return_msg + return_code,
+				});
+			}
+		});
+		setTimeout("queryOrderStatus()", 3000);//延迟三秒再去查询订单状态
+
+	});
+	function queryOrderStatus() {
+		$.ajax({
+			type : "GET",
+			url : "http://localhost:8090/pay/queryOrderStatus.action",
+			dataType : "json",//接受数据的格式
+			data : "out_trade_no=" + out_trade_no,
+			success : function(res) {
+
+				if (res.flag == success) {
+					alert(res.msg)
+					location.href = "paysuccess.html";
+
+				} else {
+					if (res.message = "支付超时") {
+						qr();//重新发起一次请求
+					} else {
+						location.href = "payfail.html";
+					}
+
+				}
+			}
+		});
+
+	}
+</script>
+</html>

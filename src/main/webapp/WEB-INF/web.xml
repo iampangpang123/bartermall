@@ -48,7 +48,9 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-	
+<!-- 项目启动监听器 -->
+	<listener>
+		<listener-class>bartermall.web.listener.StartListener</listener-class>
+	</listener>
 
 </web-app>
