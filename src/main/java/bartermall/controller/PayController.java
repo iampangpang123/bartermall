@@ -1,7 +1,11 @@
 package bartermall.controller;
 
+import static org.springframework.test.web.client.response.MockRestResponseCreators.withServerError;
+
+import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,6 +23,17 @@ import bartermall.service.PayService;
 public class PayController {
 	@Autowired
 	private PayService payService;
+
+	/*
+	 * 跳转到Pay页面，需要把购物车的订单信息带过去，我们这里就不要带了，跳转到pay页面，水谁便给他些信息让他生辰二维码就行
+	 */
+	@RequestMapping("jumpPay")
+	public void jumpPay(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 视图解析器配置的是。jsp后缀，我们这个页面是h't'm'l页面，需要使用传统的方式跳转，不走视图解析器
+
+		// request.getRequestDispatcher("/pay/pay.html").forward(request, response);
+		response.sendRedirect("pay.html");
+	}
 
 	/**
 	 ** 
@@ -51,7 +66,7 @@ public class PayController {
 		String out_trade_no = request.getParameter("out_trade_no");
 //下面代码逻辑有问题************
 		Result result = new Result(false, "支付失败");
-		int count=0;
+		int count = 0;
 //		while (true) {
 //			// 调用查询接口，存在一个问题，就是用户不扫码，直接关闭页面，我们后端会不停的查询这个订单，导致死循环，需要一个计数器进行关闭
 //			Map<String, String> map = payService.queryOrderStatus(out_trade_no);
@@ -75,7 +90,7 @@ public class PayController {
 //			break;
 //		}
 //		}
-		
+
 		return result;
 	}
 
