@@ -35,6 +35,7 @@ G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\impl\Adm
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\ProductEditController.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\ReadController.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\mapper\AdminMapper.java
+G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\web\interceptor\TestInterceptor.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\mapper\CartMapper.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\controller\EditUserInfoController.java
 G:\JavaEE\Eclipse\workspace\bartermall\src\main\java\bartermall\service\PayService.java

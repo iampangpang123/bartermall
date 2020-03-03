@@ -70,6 +70,7 @@
 			<mvc:exclude-mapping
 				path="/findAllProductAndOrder.action" />
 			<mvc:exclude-mapping path="/productSearch.action" />
+			<mvc:exclude-mapping path="/createNavite.action" />
 
 			<bean class="bartermall.web.interceptor.LoginInterceptor" />
 		</mvc:interceptor>

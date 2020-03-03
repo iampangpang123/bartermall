@@ -33,6 +33,7 @@ bartermall\controller\ProductController.class
 bartermall\pojo\Result.class
 bartermall\common\util\IdWorker.class
 bartermall\exception\GlobalException.class
+bartermall\web\interceptor\TestInterceptor.class
 bartermall\service\impl\UserServiceImpl.class
 bartermall\pojo\CartItem.class
 bartermall\service\WantBuyService.class
