@@ -33,8 +33,10 @@ public class PdfUtil {
 
             java.util.Iterator<String> it = form.getFields().keySet().iterator();
             while (it.hasNext()) {
+            	//得到模板里面域得名称
                 String name = it.next().toString();
                 System.out.println(name);
+                //根据模板里面得域得名称得到map对应得值，没有设置为空
                 String value = o.get(name)!=null?o.get(name).toString():null;
                 form.setField(name,value);
             }

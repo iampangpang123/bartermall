@@ -19,6 +19,7 @@ public class Itext5HtmlToPDF {
  
 	public static void main(String[] args) {
 		new Itext5HtmlToPDF().createPdf();
+		System.out.println("aaaaaaaaaaaa");
 	}
 	
 	public void createPdf() {
@@ -27,14 +28,14 @@ public class Itext5HtmlToPDF {
 			Font font = new Font(bfChinese, 12, Font.NORMAL);
 			
 			Document document = new Document(PageSize.A4, 10, 10, 10, 10);
-			PdfWriter mPdfWriter = PdfWriter.getInstance(document, new FileOutputStream("E:/PersonalData/Desktop/PDFTEST/htmltest.pdf"));
+			PdfWriter mPdfWriter = PdfWriter.getInstance(document, new FileOutputStream("F:/JavaIO/pdf生成测试.pdf"));
 			document.open();
 			
 			document.add(new Paragraph("创建pdf文件.支持中文......", font));
 			
 			String s = getHtml();
 			ByteArrayInputStream bin = new ByteArrayInputStream(s.getBytes());
-		//	XMLWorkerHelper.getInstance().parseXHtml(mPdfWriter, document, bin, Charset.forName("UTF-8"), new ChinaFontProvide());
+			//XMLWorkerHelper.getInstance().parseXHtml(mPdfWriter, document, bin, Charset.forName("UTF-8"), new ChinaFontProvide());
 			document.close();
 			mPdfWriter.close();
 		} catch (FileNotFoundException e) {
