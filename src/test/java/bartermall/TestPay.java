@@ -28,11 +28,12 @@ public class TestPay {
 	@Test
 	public void test() {
 		
-		///ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:weixinpay.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:weixinpay.properties");
 		//System.out.println(partner);
 		// 1.参数的封装
 		Map<String, String> parmsMap = new HashMap<String, String>();
 		parmsMap.put("appid", appid);// 公众账号ID
+		System.out.println(partner);
 		parmsMap.put("mch_id", partner);// 商户号
 		parmsMap.put("nonce_str", WXPayUtil.generateNonceStr());// 随机字符串
 		// parmsMap.put("", );//签名也是必须的，先不给，sdk可以自动给

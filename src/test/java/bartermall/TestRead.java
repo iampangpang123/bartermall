@@ -6,6 +6,9 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSON;
+
+import bartermall.pojo.User;
 
 public class TestRead {
 
@@ -58,5 +61,21 @@ public class TestRead {
 			}
 		}
 		System.out.println(str);
+	}
+
+	@Test
+	public void test2() throws IOException {
+		String a = null;
+	
+		if(	JSON.toJSONString(a)==null) {
+			System.out.println("aaa");
+		}else if(JSON.toJSONString(a).equals("")) {
+			System.out.println("bbb");
+		}else if(JSON.toJSONString(a).equals("null")) {
+			System.out.println("ccc");
+		}else {
+			System.out.println("不是null,也不是“null”");
+		}
+
 	}
 }

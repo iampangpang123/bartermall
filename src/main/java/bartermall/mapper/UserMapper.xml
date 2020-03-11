@@ -6,8 +6,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	后面会讲到，即nameSpace等于mapper接口的地址 -->
 <mapper namespace="bartermall.mapper.UserMapper">
 
-
-
 	<select id="findUserByUsername" parameterType="User"
 		resultType="user">
 		select * from user where name=#{name}

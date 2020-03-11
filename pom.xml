@@ -160,6 +160,12 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.3.19.RELEASE</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.0.1</version>
+		</dependency>
 
 		<!--邮件发送 -->
 		<dependency>
@@ -167,6 +173,24 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.62</version>
+		</dependency>
+		
+           <!-- 生成pdf -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.4.3</version>
+		</dependency>
+	<dependency>
+		<groupId>com.itextpdf</groupId>
+		<artifactId>itext-asian</artifactId>
+		<version>5.2.0</version>
+	</dependency>
 
 
 

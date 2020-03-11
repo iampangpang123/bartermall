@@ -12,13 +12,18 @@ bartermall\mapper\UserMapper.class
 bartermall\pojo\Admin.class
 bartermall\pojo\ProductWithUserInfo.class
 bartermall\web\interceptor\LoginInterceptor.class
+bartermall\controller\PdfController.class
+bartermall\controller\ExcelImoprt.class
 bartermall\controller\EditUserInfoController.class
 bartermall\controller\ReadController.class
 bartermall\common\util\HttpClient.class
 bartermall\pojo\Order.class
 bartermall\pojo\Cart.class
+bartermall\common\util\pdf\SplicingPDF.class
 bartermall\service\AdminService.class
 bartermall\service\PayService.class
+bartermall\common\util\pdf\Itext5HtmlToPDF.class
+bartermall\common\util\pdf\Itext5HtmlToPDF$ChinaFontProvide.class
 bartermall\exception\GlobalExceptionResolver.class
 bartermall\controller\ProductEditController.class
 bartermall\common\util\HttpClient$1.class
@@ -33,6 +38,7 @@ bartermall\controller\ProductController.class
 bartermall\pojo\Result.class
 bartermall\common\util\IdWorker.class
 bartermall\exception\GlobalException.class
+bartermall\web\interceptor\TestInterceptor.class
 bartermall\service\impl\UserServiceImpl.class
 bartermall\pojo\CartItem.class
 bartermall\service\WantBuyService.class
@@ -40,6 +46,7 @@ bartermall\service\impl\ProductServiceImpl.class
 bartermall\web\listener\StartListener.class
 bartermall\mapper\WantBuyMapper.class
 bartermall\common\util\PatternKit.class
+bartermall\common\util\PdfUtil.class
 bartermall\mapper\AdminMapper.class
 bartermall\pojo\WantInfo.class
 bartermall\common\util\LogAspect.class
