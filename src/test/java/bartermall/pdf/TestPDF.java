@@ -1,4 +1,4 @@
-package bartermall;
+package bartermall.pdf;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
