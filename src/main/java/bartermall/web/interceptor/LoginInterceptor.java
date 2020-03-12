@@ -18,7 +18,10 @@ public class LoginInterceptor implements HandlerInterceptor{
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		if (user == null || user.equals("")) {
-			response.sendRedirect("/index.jsp");
+			//拦截器暂时放开，方便我测试代码
+			//response.sendRedirect("/index.jsp");
+			return true;
+	
 		}
 		// 不是空，则放行
 
