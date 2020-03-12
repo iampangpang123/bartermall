@@ -274,7 +274,7 @@ public class DynamicsHtmlToPDF {
 			outfile.createNewFile();
 		} else {
 			outfile.delete();
-		}
+		}   
 		// 获取该文件的缓冲输出流
 		BufferedWriter bufferedWriter = new BufferedWriter(
 				new OutputStreamWriter(new FileOutputStream(outfile), "UTF-8"));
