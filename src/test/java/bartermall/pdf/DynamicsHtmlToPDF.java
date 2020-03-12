@@ -273,7 +273,7 @@ public class DynamicsHtmlToPDF {
 		if (!outfile.exists()) {// 如果文件不存在则创建
 			outfile.createNewFile();
 		} else {
-			outfile.delete();
+			outfile.delete();   
 		}   
 		// 获取该文件的缓冲输出流
 		BufferedWriter bufferedWriter = new BufferedWriter(
