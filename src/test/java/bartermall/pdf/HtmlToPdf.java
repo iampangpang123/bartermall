@@ -18,31 +18,6 @@ public class HtmlToPdf {
 
    private HtmlToPdf() {}
 
-   /**
-    * html转换成PDF
-    * @param htmlFile html文件
-    * @param pdfPath  pdf路径
-    * @throws Exception 异常
-    */
-   public static void htmlToPdf(File htmlFile, String pdfPath) throws Exception {
-
-       OutputStream os = new FileOutputStream(pdfPath);
-       ITextRenderer iTextRenderer = new ITextRenderer();
-       iTextRenderer.setDocument(htmlFile);
-
-       //解决中文编码
-       ITextFontResolver fontResolver = iTextRenderer.getFontResolver();
-       if ("linux".equals(getCurrentOperationSystem())) {
-           fontResolver.addFont("/usr/share/fonts/chiness/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-       } else {
-           fontResolver.addFont("c:/Windows/Fonts/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-       }
-
-       iTextRenderer.layout();
-       iTextRenderer.createPDF(os);
-       os.flush();
-       os.close();
-   }
 
    private static String getCurrentOperationSystem() {
        String os = System.getProperty("os.name").toLowerCase();
@@ -62,8 +37,14 @@ public class HtmlToPdf {
        try {
            os = new FileOutputStream(outFile);
            ITextRenderer renderer = new ITextRenderer();
+
            ITextFontResolver fontResolver = renderer.getFontResolver();
-           //处理中文             fontResolver.addFont("simhei.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+           //解决中文编码
+           if ("linux".equals(getCurrentOperationSystem())) {
+               fontResolver.addFont("/usr/share/fonts/chiness/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+           } else {
+               fontResolver.addFont("c:/Windows/Fonts/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+           }
            String url = new File(inputFile).toURI().toURL().toString();
            renderer.setDocument(url);
            renderer.layout();
