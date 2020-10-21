@@ -85,8 +85,17 @@ public class ExcelImoprt {
 	}
 
 	/**
-	 ** 
+	 **
 	 * @Description:文化事业，扣除项目清单导入.完整做法。包括加颜色。主要参考前端参数的获取方式、编码转换、结果响应
+	 * @param: @param data
+	 * @param: @param request
+	 * @param: @param response
+	 * @param: @return
+	 * @return: ResultDto<?>
+	 */
+	/**
+	 **
+	 * @Description:文化事业，扣除项目清单导出
 	 * @param: @param data
 	 * @param: @param request
 	 * @param: @param response
@@ -106,7 +115,6 @@ public class ExcelImoprt {
 //		if (StringUtils.isBlank(parameterData)) {
 //			return ResultDto.valueOfError("不存在数据，不支持导出");
 //		}
-//		System.out.println(parameterData.toString());
 //		List<YsfwxmjcqdGridlb> list = JSONArray.parseArray(parameterData, YsfwxmjcqdGridlb.class);// 将json串解析成list
 //
 //		FileInputStream inStream = null;
@@ -228,6 +236,7 @@ public class ExcelImoprt {
 //		}
 //		return ResultDto.valueOfSuccess();
 //	}
+//
 
 
 }

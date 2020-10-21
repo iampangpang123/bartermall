@@ -73,7 +73,7 @@ public class StartListener implements ServletContextListener {
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		message.setText("易货交易平台启动成功,启动时间为："+	dateFormat.format(new Date()));
 		// 发送邮件
-	//	mailSender.send(message);	
+	//	mailSender.send(message);
 
 
 	}
@@ -108,7 +108,7 @@ public class StartListener implements ServletContextListener {
 	}
 
 	/**
-	 ** 
+	 **
 	 * @Description:没用spring整合，可以发送
 	 * @param:
 	 * @return: void
@@ -139,7 +139,7 @@ public class StartListener implements ServletContextListener {
 	}
 
 	/**
-	 ** 
+	 **
 	 * @Description:报错，报JavaMailSender空指针
 	 * @param:
 	 * @return: void
