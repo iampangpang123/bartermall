@@ -56,7 +56,7 @@ public class StartListener implements ServletContextListener {
 		//
 		mailSender.setPort(587);
 		mailSender.setUsername("923972487@qq.com");
-		mailSender.setPassword("njvqgowoelepbfaa");
+		mailSender.setPassword("ocepzpehculmbbbf");
 		// 加认证机制
 		Properties javaMailProperties = new Properties();
 		 javaMailProperties.put("mail.smtp.auth", true);
